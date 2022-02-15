@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+toolbox run xset r 66
+mako &
