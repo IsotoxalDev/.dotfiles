@@ -16,3 +16,7 @@ ln -sf $wd/.config/hikari ~/.config/
 
 # neovim
 ln -sf $wd/.config/nvim ~/.config/
+
+# zsh
+ln -sf $wd/.zshrc ~/
+ln -sf $wd/.config/starship.toml ~/.config/
