@@ -1,3 +1,5 @@
+set recolor true
+
 set default-fg 			    "#d9e0ee"
 set default-bg 			    "#1e1d2f"
 
@@ -35,3 +37,23 @@ set render-loading-fg		"#d9e0ee"
 set highlight-color		    "#575268"
 set highlight-fg            "#f5c2e7"
 set highlight-active-color	"#f5c2e7"
+
+# clipboard
+set selection-clipboard clipboard
+
+# Config
+set scroll-page-aware true
+set window-title-basename true
+set adjust-open width
+set statusbar-home-tilde true
+set vertical-center true
+set synctex true
+set font "FreeSans bold 16"
+set zoom-step 3
+
+# Keymap
+map c recolor
+
+map n scroll down
+map e scroll up
+map i scroll right

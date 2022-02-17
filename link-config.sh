@@ -19,7 +19,7 @@ ln -sf $wd/nvim ~/.config/
 
 # zsh
 ln -sf $wd/ZSH/.zshrc ~/ # zshrc
-ln -sf $wd/Scripts/* ~/Documents/Code/Scripts # Scripts
+ln -sf $wd/Scripts ~/Documents/Code/Scripts # Scripts
 ln -sf $wd/starship/starship.toml ~/.config/ # Starship port
 # zsh-autosuggestions
 if [ ! -d ~/.zsh/zsh-autosuggestions ]; then

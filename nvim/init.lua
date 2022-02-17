@@ -82,6 +82,75 @@ nmap('<leader>q', ":q<cr>")
 nmap('<leader>qq', ":q!<cr>")
 nmap('<leader>s', ":source ~/.config/nvim/init.lua")
 
+-- nvim-cmp
+local cmp = require'cmp'
+
+  cmp.setup({
+    snippet = {
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      end,
+    },
+    mapping = {
+      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+      ['<C-e>'] = cmp.mapping({
+        i = cmp.mapping.abort(),
+        c = cmp.mapping.close(),
+      }),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' },
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+      { name = 'cmp_git' },
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+
+  cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
+  
+  cmp.setup {
+	  sources = {
+		  {name = 'nvim_lua'}
+	  }
+  }
+
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  require('lspconfig')['pyright'].setup {
+    capabilities = capabilities
+  }
+  require('lspconfig')['rls'].setup {
+    capabilities = capabilities
+  }
+  require('lspconfig')['gdscript'].setup {
+    capabilities = capabilities
+  }
+  require('lspconfig')['bash'].setup {
+    capabilities = capabilities
+  }
+
 -- Packages
 --
 return require('packer').startup(function()
@@ -92,9 +161,13 @@ return require('packer').startup(function()
     use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
 
     -- Completion
+	use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-nvim-lua'
+    use 'hrsh7th/cmp-git'
     use 'hrsh7th/cmp-cmdline'
 
     -- Luasnip
