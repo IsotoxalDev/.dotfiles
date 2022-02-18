@@ -151,6 +151,39 @@ local cmp = require'cmp'
     capabilities = capabilities
   }
 
+-- Treesitter
+require('nvim-treesitter.configs').setup {
+  ensure_installed = "all",
+  hightlight = { enable = true },
+  indent = { enable = true }
+}
+require"nvim-treesitter.configs".setup {
+    ensure_installed = "maintained",
+	highlight = {
+		enable = true,
+        additional_vim_regex_highlighting = true,
+    },
+    textobjects = {
+        select = {
+            enable = true
+        }
+    },
+    rainbow = {enable = true, extended_mode = true, max_file_lines = 1000},
+    context_commentstring = {enable = true, enable_autocmd = false},
+	matchup = {enable = true},
+    context = {enable = true, throttle = true},
+    autotag = {
+		enable = true,
+        filetypes = {
+			"c",
+			"c++",
+			"rust",
+			"python",
+			"gdscript",
+        }
+    }
+}
+
 -- Packages
 --
 return require('packer').startup(function()

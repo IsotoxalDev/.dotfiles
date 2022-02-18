@@ -1,6 +1,5 @@
 format = """
-$username\
-$hostname\
+$custom\
 $directory\
 $git_branch\
 $git_state\
@@ -9,6 +8,13 @@ $cmd_duration\
 $line_break\
 $python\
 $character"""
+
+[custom.toolbox]
+description = "The activated toolbox container"
+when = """ [[ -f /run/.containerenv && -f /run/.toolboxenv ]] """
+style = "bold red"
+format = "[⬢]($style) "
+disabled = false
 
 [directory]
 style = "blue"

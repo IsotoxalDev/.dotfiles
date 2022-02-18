@@ -5,13 +5,13 @@ source "$SD/ex.zsh"
 
 # Save History
 setopt INC_APPEND_HISTORY
-setopt HIST_FIND_NO_DUPS
-export HISTFILE=~/.zsh_hist
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
+setopt HIST_IGNORE_ALL_DUPS
+HISTSIZE=1000000000
+SAVEHIST=1000000000
+HISTFILE=~/.zsh_history
 
 # Starship Promt
-eval "$(starship init zsh)"
+eval $(starship init zsh)
 
 # ZSH auto-suggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
