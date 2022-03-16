@@ -4,32 +4,39 @@
 -- Author: Isotoxal
 --
 
--- Easy functions
+-- Keymaps
 --
--- Keymap functions
-function map (mode, shortcut, command)
-  vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
-end
-function nmap(shortcut, command)
-  map('n', shortcut, command)
-end
-function imap(shortcut, command)
-  map('i', shortcut, command)
-end
-
 -- Colemak Support
---
-nmap('n', 'j')
-nmap('e', 'k')
-nmap('i', 'l')
-nmap('l', 'u')
-nmap('u', 'i')
-nmap('f', 'e')
+vim.cmd
+[[
+noremap u i
+noremap l u
+noremap f e
+noremap n j
+noremap e k
+noremap i l
+]]
+-- Leader Keystuff
+vim.g.mapleader = ' '
+vim.cmd
+[[
+nnoremap <leader>w :w<cr>
+nnoremap <leader>wq :wq<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>qq :q!<cr>
+nnoremap <leader>s :source %<cr>
+]]
+-- Keymaps for ease of use
+vim.cmd
+[[
+noremap! tn <esc>
+onoremap tn <esc>
+]]
 
 -- Settings
 --
 vim.cmd
-([[
+[[
 set list
 set hidden
 set nu rnu
@@ -37,7 +44,6 @@ set ttyfast
 set showcmd
 set ttimeout
 set autoread
-set wildmenu
 set incsearch
 set lazyredraw
 set cursorline
@@ -53,7 +59,7 @@ set clipboard=unnamedplus
 set wildmode=longest:full,full
 set completeopt=longest,menuone,preview
 set tabstop=4 shiftwidth=4 softtabstop=4
-]])
+]]
 vim.cmd("syntax on")
 
 -- Themes
@@ -73,14 +79,6 @@ vim.cmd([[
 let g:vimwiki_list = [{'path': '~/.vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 ]])
-
--- Leader Keystuff
-vim.g.mapleader = ' '
-nmap('<leader>w', ":w<cr>")
-nmap('<leader>wq', ":wq<cr>")
-nmap('<leader>q', ":q<cr>")
-nmap('<leader>qq', ":q!<cr>")
-nmap('<leader>s', ":source ~/.config/nvim/init.lua")
 
 -- nvim-cmp
 local cmp = require'cmp'
@@ -138,18 +136,13 @@ local cmp = require'cmp'
   }
 
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  require('lspconfig')['pyright'].setup {
-    capabilities = capabilities
-  }
-  require('lspconfig')['rls'].setup {
-    capabilities = capabilities
-  }
-  require('lspconfig')['gdscript'].setup {
-    capabilities = capabilities
-  }
-  require('lspconfig')['bash'].setup {
-    capabilities = capabilities
-  }
+  local servers = { 'pyright', 'rust_analyzer', 'gdscript'}
+  for _, lsp in pairs(servers) do
+    require('lspconfig')[lsp].setup {
+      on_attach = on_attach,
+	  capabilities = capabilities,
+    }
+  end
 
 -- Treesitter
 require('nvim-treesitter.configs').setup {
@@ -177,8 +170,11 @@ require"nvim-treesitter.configs".setup {
         filetypes = {
 			"c",
 			"c++",
+			"bash",
+			"json",
 			"rust",
 			"python",
+			"markdown",
 			"gdscript",
         }
     }

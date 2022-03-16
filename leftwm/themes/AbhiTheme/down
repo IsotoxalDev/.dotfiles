@@ -1,0 +1,6 @@
+#!/bin/env bash
+
+pkill flameshot
+pkill picom
+pkill nitrogen
+pkill lemonbar

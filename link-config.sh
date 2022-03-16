@@ -28,3 +28,6 @@ fi
 
 # zathura
 ln -sf $wd/zathura ~/.config
+
+# Leftwm
+ln -sf $wd/leftwm ~/.config
