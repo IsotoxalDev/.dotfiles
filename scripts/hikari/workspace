@@ -1,0 +1,50 @@
+#!/bin/env bash
+
+TEMP_FILE="/tmp/hikari_workspace"
+RED='\033[0;31m'
+NC='\033[0m'
+
+err () {
+	echo -e "${RED}Error: $1${NC}" >&2; exit 1
+}
+
+# Workspace no file check
+if [[ ! -f $TEMP_FILE ]]
+then
+	echo 1 > $TEMP_FILE
+fi
+
+# Check is no a integer
+re='^[0-9]+$'
+if ! [[ $2 =~ $re ]]
+then
+   err "Not a number"
+fi
+
+# Chek is number is below 9
+if [[ $2 -gt 9 ]]
+then
+	err "Error: Number is above 9"
+fi
+
+# get sub command
+if [[ $1 == "get" ]]
+then
+	while true
+	do
+		if [[ $2 == "$(cat $TEMP_FILE)" ]]
+		then
+			echo {\"text\": \"⬤\", \"class\": \"current\"}
+		else
+			echo {\"text\": \"◯\"}
+		fi
+		inotifywait -qq -e modify $TEMP_FILE
+	done
+fi
+
+# set sub command
+if [[ $1 == "set" ]]
+then
+	echo $2 > $TEMP_FILE
+	echo $2
+fi

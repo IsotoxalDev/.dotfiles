@@ -1,0 +1,82 @@
+{
+    "layer": "top",
+	"mode": "dock",
+	"position": "top",
+	"margin": 5,
+	"modules-left": ["clock#dateicon", "clock#date"],
+	"modules-center": 
+		["custom/1", "custom/2", "custom/3", "custom/4", "custom/5", "custom/6", "custom/7", "custom/8", "custom/9"],
+    "modules-right":
+	["tray",
+	"battery#icon", "battery", "clock#icon", "clock",
+	"custom/ss", "custom/power"],
+
+	"battery": {
+        "format": "{capacity}%",
+    },
+	"battery#icon": {
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""],
+		"rotate": 90
+    },
+
+    "clock": {
+		"format": "{:%I:%M  %p}",
+    },
+    "clock#icon": {
+		"format": "{:}",
+    },
+
+    "clock#date": {
+		"format": "{:%b %d}",
+    },
+    "clock#dateicon": {
+		"format": "{:}",
+    },
+
+	"custom/ss": {
+		"format": "⛶",
+		"on-click": "grim -g \"$(slurp)\" - | wl-copy & > /dev/null",
+		"on-click-right": "grim - | wl-copy",
+	},
+	"custom/power": {
+		"format": "⏻",
+		"on-click": "$HOME/Documents/Code/scripts/hikari/pm",
+	},
+	"custom/1": {
+		"exec": "$HOME/Documents/Code/scripts/hikari/workspace get 1",
+		"return-type": "json"
+	},
+	"custom/2": {
+		"exec": "$HOME/Documents/Code/scripts/hikari/workspace get 2",
+		"return-type": "json"
+	},
+	"custom/3": {
+		"exec": "$HOME/Documents/Code/scripts/hikari/workspace get 3",
+		"return-type": "json"
+	},
+	"custom/4": {
+		"exec": "$HOME/Documents/Code/scripts/hikari/workspace get 4",
+		"return-type": "json"
+	},
+	"custom/5": {
+		"exec": "$HOME/Documents/Code/scripts/hikari/workspace get 5",
+		"return-type": "json"
+	},
+	"custom/6": {
+		"exec": "$HOME/Documents/Code/scripts/hikari/workspace get 6",
+		"return-type": "json"
+	},
+	"custom/7": {
+		"exec": "$HOME/Documents/Code/scripts/hikari/workspace get 7",
+		"return-type": "json"
+	},
+	"custom/8": {
+		"exec": "$HOME/Documents/Code/scripts/hikari/workspace get 8",
+		"return-type": "json"
+	},
+	"custom/9": {
+		"exec": "$HOME/Documents/Code/scripts/hikari/workspace get 9",
+		"return-type": "json"
+	},
+}

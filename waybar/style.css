@@ -1,0 +1,92 @@
+window#waybar {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#custom-1,
+#custom-2,
+#custom-3,
+#custom-4,
+#custom-5,
+#custom-6,
+#custom-7,
+#custom-8,
+#custom-9,
+#custom-ss,
+#custom-power,
+#tray,
+#clock,
+#battery {
+	padding: 5px;
+	background-color: #1A1826;
+	color: #D9E0EE;
+}
+
+#tray {
+	border-radius: 5px 5px 5px 5px;
+	margin-right: 20px;
+}
+
+#clock {
+	border-radius: 0px 5px 5px 0px;
+	padding-right: 10px;
+	padding-left: 4px;
+}
+#clock.icon {
+	border-radius: 0px 0px 0px 0px;
+	padding-right: 4px;
+	color: #ABE9B3
+}
+
+#clock.date {
+	border-radius: 0px 5px 5px 0px;
+	padding-right: 10px;
+	padding-left: 4px;
+}
+#clock.dateicon {
+	border-radius: 5px 0px 0px 5px;
+	padding-right: 4px;
+	padding-left: 10px;
+	color: #ABE9B3
+}
+#battery.icon {
+	padding-right: 2px;
+	padding-left: 10px;
+	border-radius: 5px 0px 0px 5px;
+	color: #ABE9B3
+}
+#battery {
+	padding-right: 10px;
+	padding-left: 2px;
+}
+#custom-1 {
+	border-radius: 5px 0px 0px 5px;
+	padding-left: 10px;
+}
+#custom-9 {
+	border-radius: 0px 5px 5px 0px;
+	padding-right: 10px;
+}
+#custom-1.current,
+#custom-2.current,
+#custom-3.current,
+#custom-4.current,
+#custom-5.current,
+#custom-6.current,
+#custom-7.current,
+#custom-8.current,
+#custom-9.current {
+	color: #ABE9B3;
+}
+
+#custom-ss {
+	border-radius: 5px 0px 0px 5px;
+	padding-left: 10px;
+	margin-left: 20px;
+	color: #ABE9B3;
+}
+#custom-power {
+	border-radius: 0px 5px 5px 0px;
+	padding-right: 10px;
+	color: #ABE9B3;
+}

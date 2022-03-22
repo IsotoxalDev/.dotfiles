@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+wd="~/.config/rofi/launcher"
+
+rofi -no-lazy-grab -show drun -modi drun -theme $wd/launcher.rasi""

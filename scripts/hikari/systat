@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+wd=~/.config/alacritty
+
+alacritty --config-file "$wd/systat.yml" --class Systat -e htop

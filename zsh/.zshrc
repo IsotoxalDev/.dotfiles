@@ -1,4 +1,4 @@
-SD=~/Documents/Code/scripts
+SD=~/Documents/Code/scripts/zsh
 
 source "$SD/alias.zsh"
 source "$SD/ex.zsh"
@@ -11,7 +11,10 @@ SAVEHIST=1000000000
 HISTFILE=~/.zsh_history
 
 # Path
-export PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/:$PATH"
+export PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/:$HOME/.bin/$PATH"
+
+# Cursor
+export XCURSOR_THEME=Catppuccin-Dark-Cursors
 
 # Starship Promt
 eval $(starship init zsh)

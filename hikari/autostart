@@ -1,4 +1,6 @@
 #!/bin/env bash
 
-toolbox run xset r 66
+toolbox run xset r 66 &
 mako &
+/var/home/abhi/Documents/Code/scripts/hikari/systat &
+waybar &

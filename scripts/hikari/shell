@@ -1,0 +1,8 @@
+#!/bin/env bash
+
+if [[ $1 == root ]]
+then
+	alacritty --class root -e sudo su &
+else
+	alacritty &
+fi
