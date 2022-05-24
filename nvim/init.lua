@@ -25,6 +25,7 @@ nnoremap <leader>wq :wq<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>qq :q!<cr>
 nnoremap <leader>s :source %<cr>
+nnoremap <leader>b :!mdbook build<cr> <cr>
 ]]
 -- Keymaps for ease of use
 vim.cmd

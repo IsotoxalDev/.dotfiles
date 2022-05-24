@@ -1,3 +1,6 @@
 [user]
 	name = Isotoxal
 	email = 62714538+IsotoxalDev@users.noreply.github.com
+	signingkey = 5DA701654ABC6E889E7D642CBB3A5BE61DA9BEC2
+[color]
+	ui = auto

@@ -15,6 +15,7 @@ window#waybar {
 #custom-ss,
 #custom-power,
 #tray,
+#pulseaudio,
 #clock,
 #battery {
 	padding: 5px;
@@ -57,6 +58,13 @@ window#waybar {
 }
 #battery {
 	padding-right: 10px;
+	padding-left: 2px;
+}
+#pulseaudio.icon {
+	padding-right: 2px;
+	color: #ABE9B3
+}
+#pulseaudio {
 	padding-left: 2px;
 }
 #custom-1 {

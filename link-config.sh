@@ -23,6 +23,9 @@ ln -sf $wd/waybar ~/.config/
 # neovim
 ln -sf $wd/nvim ~/.config/
 
+# helix
+ln -sf $wd/helix ~/.config/
+
 # zsh
 ln -sf $wd/zsh/.zshrc ~/ # zshrc
 ln -sf $wd/starship/starship.toml ~/.config/ # Starship port

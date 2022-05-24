@@ -11,7 +11,7 @@ SAVEHIST=1000000000
 HISTFILE=~/.zsh_history
 
 # Path
-export PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/:$HOME/.bin/$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/:$HOME/.bin/:$PATH"
 
 # Cursor
 export XCURSOR_THEME=Catppuccin-Dark-Cursors
@@ -22,3 +22,5 @@ eval $(starship init zsh)
 # ZSH auto-suggestions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# gpg tty
+export GPG_TTY=$(tty)

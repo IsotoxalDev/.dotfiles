@@ -14,6 +14,3 @@ alias brave="flatpak run com.brave.Browser"
 
 # Discord
 alias discord="flatpak run com.brave.Browser --app=https://discord.com/channels/@me"
-
-# NeoVim (Silverblue)
-alias nvim="toolbox run nvim"

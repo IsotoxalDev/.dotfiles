@@ -1,0 +1,11 @@
+theme = "catpuccin"
+
+[editor]
+line-number = "relative"
+true-color = true
+mouse=false
+middle-click-paste = false
+shell = ["zsh"]
+
+[editor.cursor-shape]
+insert = "bar"
