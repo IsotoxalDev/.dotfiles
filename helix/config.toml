@@ -9,3 +9,6 @@ shell = ["zsh"]
 
 [editor.cursor-shape]
 insert = "bar"
+
+[editor.whitespace.render]
+newline = "all"
