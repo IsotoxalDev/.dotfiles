@@ -6,7 +6,7 @@ wd="$(pwd)/$(dirname $0)"
 ln -sf $wd/.gitconfig ~/.gitconfig
 
 # copy scripts
-ln -sf $wd/scripts ~/Documents/Code/
+ln -sf $wd/.scripts ~/.scripts
 
 # alacritty
 ln -sf $wd/alacritty ~/.config/

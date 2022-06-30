@@ -6,16 +6,6 @@
 
 -- Keymaps
 --
--- Colemak Support
-vim.cmd
-[[
-noremap u i
-noremap l u
-noremap f e
-noremap n j
-noremap e k
-noremap i l
-]]
 -- Leader Keystuff
 vim.g.mapleader = ' '
 vim.cmd

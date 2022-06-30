@@ -1,4 +1,4 @@
-SD=~/Documents/Code/scripts/zsh
+SD=~/.scripts/zsh
 
 source "$SD/alias.zsh"
 source "$SD/ex.zsh"
