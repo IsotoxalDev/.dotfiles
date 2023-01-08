@@ -53,6 +53,50 @@ set tabstop=4 shiftwidth=4 softtabstop=4
 ]]
 vim.cmd("syntax on")
 
+-- Packages
+require('packer').startup(function()
+    -- Packer
+    use 'wbthomason/packer.nvim'
+
+    -- Treesitter
+    use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
+
+    -- Completion
+	use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-nvim-lua'
+    use 'hrsh7th/cmp-git'
+    use 'hrsh7th/cmp-cmdline'
+
+    -- Luasnip
+    use 'hrsh7th/cmp-vsnip'
+    use 'hrsh7th/vim-vsnip'
+    
+    -- Theme
+    -- 
+    -- Catppuccin
+    use {'catppuccin/nvim', as='catppuccin'}
+    -- Lualine
+    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
+
+    -- Fuzzy Search
+    use { 'kyazdani42/nvim-web-devicons' }
+    use { 'amirrezaask/fuzzy.nvim', requires={'nvim-lua/plenary.nvim'}}
+    
+    -- Auto Pairs
+    use 'chun-yang/auto-pairs'
+
+	-- Instant
+	use 'jbyuki/instant.nvim'
+
+	-- Vimwiki
+	use 'vimwiki/vimwiki'
+end)
+
+--
 -- Themes
 --
 -- Colorscheme
@@ -171,43 +215,3 @@ require"nvim-treesitter.configs".setup {
     }
 }
 
--- Packages
---
-return require('packer').startup(function()
-    -- Packer
-    use 'wbthomason/packer.nvim'
-
-    -- Treesitter
-    use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
-
-    -- Completion
-	use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-nvim-lua'
-    use 'hrsh7th/cmp-git'
-    use 'hrsh7th/cmp-cmdline'
-
-    -- Luasnip
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
-    
-    -- Theme
-    -- 
-    -- Catppuccin
-    use {'catppuccin/nvim', as='catppuccin'}
-    -- Lualine
-    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}
-
-    -- Fuzzy Search
-    use { 'kyazdani42/nvim-web-devicons' }
-    use { 'amirrezaask/fuzzy.nvim', requires={'nvim-lua/plenary.nvim'}}
-    
-    -- Auto Pairs
-    use 'chun-yang/auto-pairs'
-
-	-- Vimwiki
-	use 'vimwiki/vimwiki'
-end)

@@ -4,3 +4,10 @@
 	signingkey = 5DA701654ABC6E889E7D642CBB3A5BE61DA9BEC2
 [color]
 	ui = auto
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
